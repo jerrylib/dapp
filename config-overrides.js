@@ -3,8 +3,6 @@ const moment = require("moment");
 const { env } = require("./configs/address.json");
 
 const FileManagerPlugin = require("filemanager-webpack-plugin");
-const BundleAnalyzerPlugin =
-  require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 function resolve(dir) {
   return path.join(__dirname, ".", dir);
@@ -35,7 +33,6 @@ module.exports = function override(config) {
         },
       })
     );
-    config.plugins.push(new BundleAnalyzerPlugin());
   }
   return config;
 };
